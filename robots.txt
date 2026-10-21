@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://katemewow.github.io/sitemap.xml
