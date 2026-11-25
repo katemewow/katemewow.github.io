@@ -50,7 +50,7 @@ li { padding-left: 3px; margin: 9px 0; }
   a { color: inherit; }
 }
 
-/* A small reading header: no cards, menus, or decorative controls. */
+/* A small sticky reading header. */
 .site-header { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid #ededed; }
 .site-header-inner { width: min(100% - 48px, 1000px); margin: auto; min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 0; }
 .author-link { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; font-size: 16px; font-weight: 600; text-decoration: none; color: #252525; }
@@ -93,4 +93,31 @@ mark strong { font-weight: inherit; }
 @media print {
   .site-header, .skip-link { display: none; }
   mark { background: none; text-decoration: underline; }
+}
+
+/* Dated updates, newest first, in the same quiet article style. */
+.byline .updated-date { display: inline-block; }
+.current-status { margin: 0 0 22px; }
+.updates > h2 { margin-top: 34px; margin-bottom: 10px; }
+.updates-intro { font-size: 16px; line-height: 1.55; color: #606060; margin-bottom: 22px; }
+.update-list { display: grid; gap: 20px; }
+.update-card { padding: 25px 28px 26px; border: 1px solid #e2e2e2; border-radius: 16px; background: #fafafa; min-width: 0; }
+.update-card .update-date { color: #646464; font-size: 14px; line-height: 1.5; margin: 0 0 10px; }
+.update-card h3 { font-size: 22px; line-height: 1.3; margin: 0 0 17px; }
+.update-card p { margin: 0 0 17px; }
+.update-card > :last-child { margin-bottom: 0; }
+.update-card figure { margin: 22px 0; }
+.update-card figure img { border-radius: 7px; background: #fff; box-shadow: 0 3px 12px rgb(0 0 0 / 6%); }
+.update-card .update-links { font-size: 16px; line-height: 1.55; margin: 19px 0 0; }
+#original-story { padding-top: 12px; }
+@media (max-width: 600px) {
+  .update-list { gap: 16px; }
+  .update-card { padding: 20px 18px 22px; border-radius: 14px; }
+  .update-card h3 { font-size: 21px; }
+  .update-card .update-date { font-size: 14px; }
+  .updates-intro { font-size: 15px; }
+}
+@media print {
+  .update-card { background: #fff; border-color: #bbb; padding: 16px; }
+  .update-card h3, .update-card .update-date { break-after: avoid; }
 }
